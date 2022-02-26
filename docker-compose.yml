@@ -3,9 +3,9 @@ services:
  postgres:
   image: postgres:13
   environment:
-    - POSTGRES_DB=
-    - POSTGRES_USER=
-    - POSTGRES_PASSWORD=
+    - POSTGRES_DB=proyect
+    - POSTGRES_USER=juan
+    - POSTGRES_PASSWORD=1234proyect
   ports: 
     - 5432:5432
   volumes:
@@ -14,7 +14,7 @@ services:
  pgadmin:
     image: dpage/pgadmin4
     environment:
-      - PGADMIN_DEFAULT_EMAIL=
-      - PGADMIN_DEFAULT_PASSWORD=
+      - PGADMIN_DEFAULT_EMAIL=juan@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=juan1234
     ports:
       - 5050:80
