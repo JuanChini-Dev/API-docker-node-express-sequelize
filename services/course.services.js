@@ -8,8 +8,8 @@ class CourseServices {
 
     async findAll(){
         const courses = await models.Course.findAll({
-            include: models.CourseModality,
-                attributes: [activeCourse == true]
+            // include: models.CourseModality,
+            //     attributes: [activeCourse == true]
         })
         return courses
     } 

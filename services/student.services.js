@@ -16,10 +16,10 @@ class StudentService {
         const student = await models.Student.findByPk(id, {
             include: {
                 model: models.Locality,
-                    include: {
-                        model: models.Province,
-                            include: models.Country
-                        }
+                    // include: {
+                    //     model: models.Province,
+                    //         include: models.Country
+                    //     }
                 }
         })
         return student
