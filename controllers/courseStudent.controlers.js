@@ -23,6 +23,16 @@ class CourseStudentController {
             next(error)
         }
     }
+
+    static async postCourseStudentAll(req, res, next) {
+        try {
+            const body = req.body;
+            const newCourseStudentAll = await service.create(body);
+            res.status(201).json(newCourseStudentAll);          
+        } catch( error){
+            next(error)
+        }
+    }
 }
 
 module.exports = CourseStudentController 

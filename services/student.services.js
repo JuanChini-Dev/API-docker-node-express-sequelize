@@ -1,9 +1,16 @@
 const { models } = require('../libs/sequelize')
+const bcript = require('bcrypt');
+
 
 class StudentService {
 
     async create(data){
-        const newStudent = await models.Student.create(data);
+        const hash = await bcript.hash(data.email, 10)
+        const newStudent = await models.Student.create({
+            ...data,
+            email: hash
+        });
+        delete newStudent.dataValues.email;
         return newStudent
     }
 
